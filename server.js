@@ -7,9 +7,9 @@ const writeStory = require('./writeStory.js');
 app.use(express.json());
 
 app.post('/', async (req, res) => {
-    const {token, story} = req.body;
+    const {token, story, region} = req.body;
     try {
-        let logger = require('logzio-nodejs').createLogger({token});
+        let logger = require('logzio-nodejs').createLogger({token, host: `listener${region ? '-' + region: ''}.logz.io`});
         let logs = await writeStory(story);
         logs.forEach(line => {
             logger.log(line);
@@ -20,4 +20,4 @@ app.post('/', async (req, res) => {
     }
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`app listening on port ${port}`))
