@@ -3,7 +3,7 @@
 // Logz.io Hackathon 2020 - Log Shipper UI
 
 // Load Test Data
-const {program, story} = require('./testData');
+// const {program, story} = require('./testData');
 
 const randomUseragent = require('random-useragent');
 console.log(randomUseragent.getRandom())
@@ -32,7 +32,7 @@ const timestampList = (from_time, to_time, n) => {
     from_time = new Date(from_time);
     to_time = new Date(to_time);
     const int = Math.floor((from_time - to_time)/n);
-    let timestamps = new Array(n).fill(+from_time);
+    let timestamps = new Array(+n).fill(+from_time);
     return timestamps.map((t,i )=> {
         let unix = t + i*int + randn_bm()*(int/2); // even intervals plus noise
         let timestamp = new Date(unix);
@@ -84,4 +84,4 @@ const writeStory = (story) => {
 
 module.exports = writeStory
 
-writeStory(story).then(console.log)
+// writeStory(story).then(console.log)
