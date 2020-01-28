@@ -3,7 +3,7 @@
 
 This service takes a POST request to its host and ships the 'Story' defined in the request body.
 
-The request body should contain:
+**The request body should contain:**
 
 - `token`: Account shipping token
 - `region`: Account region ('au', 'ca', 'eu', 'nl', 'wa', exclude if US-East)
@@ -11,7 +11,7 @@ The request body should contain:
 
 A `story` is an array of objects we will call 'chapters', which define the log_type, period of time to ship, the number of logs to ship between that period, and the content of the logs. 
 
-Each 'chapter' object in the `story` array contains:
+**Each 'chapter' object in the `story` array contains:**
 
 - `log_type`: the 'type' field added to each log line
 - `from_time`: time to start shipping (ISO 8601 format)
@@ -19,7 +19,7 @@ Each 'chapter' object in the `story` array contains:
 - `n`: number of logs to ship between the defined time period spread at even intervals (plus or minus a small number)
 - `fields`: an array of objects that define the remaining fields and the possible values they can take
 
-The objects in the `fields` array must contain:
+**The objects in the `fields` array must contain:**
 
 - `field_name`: name of the field to be shipped
 - `type`: one of 'key', 'normal', 'ip', or 'ua'
