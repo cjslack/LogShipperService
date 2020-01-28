@@ -31,7 +31,7 @@ The objects in the `fields` array must contain:
 #### Example Request
 This example request will create some basic logs over a 3 hour period with a 1 hour spike in the midddle of excess requests to the '/users' resource returning many 500 errors
 
-```json
+```javascript
 {
     "token": "<LOGZIO_SHIPPING_TOKEN>",
     "story": [
@@ -72,7 +72,7 @@ This example request will create some basic logs over a 3 hour period with a 1 h
                     ]
                 },
                 {
-                    "field_name": "field2",
+                    "field_name": "resource",
                     "type": "key",
                     "values": [
                         "/users",
@@ -133,7 +133,7 @@ This example request will create some basic logs over a 3 hour period with a 1 h
                     ]
                 },
                 {
-                    "field_name": "field2",
+                    "field_name": "resource",
                     "type": "key",
                     "values": [
                         "/users"
