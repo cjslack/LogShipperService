@@ -23,7 +23,7 @@ The objects in the `fields` array must contain:
 
 - `field_name`: name of the field to be shipped
 - `type`: one of 'key', 'normal', 'ip', or 'ua'
-    - `type: 'key'` will randomly select a field from an array of `values`, using a `probability` array if supplied
+    - `type: 'key'` will randomly select a value from an array of `values`, using a `probability` array if supplied
     - `type: 'normal'` will generate a random number from an normal distribution, using `mean` and `sd` (standard deviation)
     - `type: 'ua'` will generate a random user-agent string
     - `type: 'ip'` will generate a random ip address
