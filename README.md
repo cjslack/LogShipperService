@@ -33,83 +33,125 @@ This example request will create some basic logs over a 3 hour period with a 1 h
 
 ```
 {
-    'token': '<LOGZIO_SHIPPING_TOKEN>',
-    'story':[
+    "token": "<LOGZIO_SHIPPING_TOKEN>",
+    "story": [
         {
-            log_type: 'story-demo', 
-            from_time: '2020-01-28T20:00:00.000Z', 
-            to_time: '2020-01-28T23:00:00.000Z', 
-            n: 200, 
-            fields: [
+            "log_type": "story-demo",
+            "from_time": "2020-01-28T14:00:00.000Z",
+            "to_time": "2020-01-28T17:00:00.000Z",
+            "n": 200,
+            "fields": [
                 {
-                  field_name: 'status', 
-                  type: 'key', 
-                  values: [200, 400, 500], 
-                  probability: [.80,.15,.05]
+                    "field_name": "status",
+                    "type": "key",
+                    "values": [
+                        200,
+                        400,
+                        500
+                    ],
+                    "probability": [
+                        0.8,
+                        0.15,
+                        0.05
+                    ]
                 },
                 {
-                  field_name: 'method', 
-                  type: 'key', 
-                  values: ['GET', 'POST', 'PUT', 'DELETE'], 
-                  probability: [.70, .20, .05, .05]
+                    "field_name": "method",
+                    "type": "key",
+                    "values": [
+                        "GET",
+                        "POST",
+                        "PUT",
+                        "DELETE"
+                    ],
+                    "probability": [
+                        0.7,
+                        0.2,
+                        0.05,
+                        0.05
+                    ]
                 },
                 {
-                  field_name: 'field2',
-                  type: 'key',
-                  values: ["/users","/posts", "/comments"]
+                    "field_name": "field2",
+                    "type": "key",
+                    "values": [
+                        "/users",
+                        "/posts",
+                        "/comments"
+                    ]
                 },
                 {
-                  field_name: 'ip',
-                  type: 'ip'
+                    "field_name": "ip",
+                    "type": "ip"
                 },
                 {
-                  field_name: 'UA',
-                  type: 'ua'
+                    "field_name": "UA",
+                    "type": "ua"
                 },
                 {
-                  field_name: 'bytes',
-                  type: 'normal', 
-                  mean: 100, 
-                  sd: 20
+                    "field_name": "bytes",
+                    "type": "normal",
+                    "mean": 100,
+                    "sd": 20
                 }
             ]
         },
         {
-            log_type: 'story-demo', 
-            from_time: '2020-01-28T221:00:00.000Z', 
-            to_time: '2020-01-28T22:00:00.000Z', 
-            n: 100, 
-            fields: [
+            "log_type": "story-demo",
+            "from_time": "2020-01-28T15:00:00.000Z",
+            "to_time": "2020-01-28T16:00:00.000Z",
+            "n": 100,
+            "fields": [
                 {
-                  field_name: 'status', 
-                  type: 'key', 
-                  values: [200, 400, 500], 
-                  probability: [.20,.05,.75]
+                    "field_name": "status",
+                    "type": "key",
+                    "values": [
+                        200,
+                        400,
+                        500
+                    ],
+                    "probability": [
+                        0.2,
+                        0.05,
+                        0.75
+                    ]
                 },
                 {
-                  field_name: 'method', 
-                  type: 'key', 
-                  values: ['GET', 'POST', 'PUT', 'DELETE'], 
-                  probability: [.70, .20, .05, .05]
+                    "field_name": "method",
+                    "type": "key",
+                    "values": [
+                        "GET",
+                        "POST",
+                        "PUT",
+                        "DELETE"
+                    ],
+                    "probability": [
+                        0.7,
+                        0.2,
+                        0.05,
+                        0.05
+                    ]
                 },
                 {
-                  field_name: 'field2',
-                  type: 'key',
-                  values: ["/users"]
+                    "field_name": "field2",
+                    "type": "key",
+                    "values": [
+                        "/users"
+                    ]
                 },
                 {
-                  field_name: 'ip',
-                  type: 'ip'
+                    "field_name": "ip",
+                    "type": "ip"
                 },
                 {
-                  field_name: 'UA',
-                  type: 'ua'
+                    "field_name": "UA",
+                    "type": "ua"
                 },
                 {
-                  field_name: 'bytes',
-                  type: 'normal', 
-                  mean: 100, 
-                  sd: 20
+                    "field_name": "bytes",
+                    "type": "normal",
+                    "mean": 100,
+                    "sd": 20
                 }
             ]
         }
