@@ -72,7 +72,7 @@ This example request will create some basic logs over a 3 hour period with a 1 h
                     ]
                 },
                 {
-                    "field_name": "field2",
+                    "field_name": "resource",
                     "type": "key",
                     "values": [
                         "/users",
@@ -133,7 +133,7 @@ This example request will create some basic logs over a 3 hour period with a 1 h
                     ]
                 },
                 {
-                    "field_name": "field2",
+                    "field_name": "resource",
                     "type": "key",
                     "values": [
                         "/users"
