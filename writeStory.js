@@ -45,13 +45,22 @@ const randomValues = (fields) => {
     let obj = {};
     fields.forEach(field => {
         if (field.type === 'key') {
-            obj[field.field_name] = randomItem(field.values)
+            let values = [];
+            if (field.probability && field.probability.length === field.values.length) {
+                field.values.forEach((v, i) => {
+                    let arr = new Array(Math.floor(field.probability[i]*100)).fill(v)
+                    values = [...values, ...arr]
+                })
+            } else {
+                values = field.values
+            }
+            obj[field.field_name] = randomItem(values)
         } else if (field.type === 'ip') {
             obj[field.field_name] = randomIp()
         } else if (field.type === 'ua') {
             obj[field.field_name] = randomUseragent.getRandom()
-        } else if (field.type === 'range') {
-            obj[field.field_name] = Math.floor(Math.abs(randn_bm())*field.mean)
+        } else if (field.type === 'normal') {
+            obj[field.field_name] = Math.floor(field.mean + randn_bm()*field.sd)
         }
     })
     return obj

@@ -55,11 +55,12 @@
 const logTypes = {
     apache: {
         fields: [
-            {field_name: 'field1', type: 'key', values: ['A', 'B', 'C']},
-            {field_name: 'field2', type: 'key', values: [1, 2, 3]},
+            {field_name: 'status', type: 'key', values: [200, 400, 500], probability: [.8,.15,.05]},
+            {field_name: 'method', type: 'key', values: ['GET', 'POST', 'PUT', 'DELETE'], probability: [.70, .20, .05, .05]},
+            {field_name: 'field2', type: 'key', values: ["/users", "/posts", "/comments"]},
             {field_name: 'ip', type: 'ip'},
             {field_name: 'UA', type: 'ua'},
-            {field_name: 'bytes', type: 'range', mean: 100}
+            {field_name: 'bytes', type: 'normal', mean: 100, sd: 20}
         ]
     }
 }
@@ -79,8 +80,7 @@ const sendLogs = (e) => {
             fields: logTypes[data.get('logtype')].fields
         }]
     }
-    console.log(submitObj)
-
+    
     fetch('http://localhost:3000/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},

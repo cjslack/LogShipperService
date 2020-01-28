@@ -15,7 +15,6 @@ app.post('/', async (req, res) => {
         let logs = await writeStory(story);
         logs.forEach(line => {
             logger.log(line);
-            console.log('sent log')
         });
         res.status(200).send('Succesfully shipped story');
     } catch (e) {
