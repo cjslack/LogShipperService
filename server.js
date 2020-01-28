@@ -9,7 +9,6 @@ app.use(express.static('public'));
 
 app.post('/', async (req, res) => {
     const {token, region, story} = req.body;
-    console.log(req.body)
     try {
         let logger = require('logzio-nodejs').createLogger({token, host: `listener${region ? '-' + region: ''}.logz.io`});
         let logs = await writeStory(story);

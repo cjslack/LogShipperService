@@ -6,7 +6,6 @@
 // const {program, story} = require('./testData');
 
 const randomUseragent = require('random-useragent');
-console.log(randomUseragent.getRandom())
 
 // Get random item from array
 const randomItem = (items) => {
