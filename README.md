@@ -1,7 +1,7 @@
 # Log Shipper Service
 ## Tell a logging 'Story' by creating comprehensive demo logs
 
-This service takes a POST request to it's host and ships the 'Story' defined in the request body.
+This service takes a POST request to its host and ships the 'Story' defined in the request body.
 
 The request body should contain:
 
