@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "logzio-nodejs": "^1.0.7",
     "random-useragent": "^0.3.1"
   },
